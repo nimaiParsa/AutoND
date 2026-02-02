@@ -160,7 +160,7 @@ def convert_from_binary(arr, _dtype = np.uint8):
     for i in range(num_words):
         for j in range(8):
             pos = 8 * i + j
-            X[:, i] += 2**(8-1-j) * arr[:, pos]
+            X[:, i] += _dtype(2**(8-1-j)) * arr[:, pos]
     return X
 
 def convert_to_binary(arr):

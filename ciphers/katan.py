@@ -87,7 +87,7 @@ def convert_from_binary(arr, _dtype=np.uint64):
   for i in range(num_words):
     for j in range(plain_bits):
         pos = plain_bits*i+j
-        X[:, i] += 2**(plain_bits-1-j)*arr[:, pos]
+        X[:, i] += _dtype(2**(plain_bits-1-j))*arr[:, pos]
   return(X);
 
 
